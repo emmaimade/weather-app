@@ -14,13 +14,13 @@
                 <h3>Weather APP</h3>
                 <form action="/weather" method="post" class="my-4">
                     <div class="form-group d-flex">
-                        <input type="text" class="form-control mx-3" name="city" placeholder="Enter city name" autocomplete="off" autofocus>
-                        <button type="submit" class="btn btn-secondary">Get Weather</button>
+                        <input type="text" class="form-control" name="city" placeholder="Enter city name" autocomplete="off" autofocus>
+                        <button type="submit" class="btn btn-secondary  ms-3">Get Weather</button>
                     </div>
                 </form>
 
                 <% if (locals.data) { %>
-                <div class="card mx-3">
+                <div class="card">
                     <div class="card-body">
                         <p class="card-text"><i class="fas fa-thermometer-half"></i> <%= (data.main.temp - 273.15).toFixed(2) %>&deg;C</p>
                         <p class="card-text"><i class="fas fa-cloud"></i> <%= data.weather[0].main %></p>
@@ -30,7 +30,7 @@
                 <% } %>
 
                 <% if (locals.error) { %>
-                <div class="error" role="alert">
+                <div class="alert alert-danger" role="alert">
                     <%= locals.error %>
                 </div>
                 <% } %>
